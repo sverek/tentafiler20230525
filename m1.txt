@@ -1,0 +1,75 @@
+"""
+Solutions to exam tasks for modul 1 (A1, A2 and B1) for exam 2023-05-25
+"""
+### A1 START ###
+
+
+def longest_list(lst):
+    '''A1: Returns the length of the longest list in lst'''
+    pass
+
+
+def A1():
+    print('\nDemonstrating A1: The longest_list function')
+    lists = (1,
+             [],
+             [1],
+             [[1, 2]],
+             [[1, 2, 3], 2],
+             [1, 2, 3, [1, 2]],
+             [1, 2, [3, [1, [2], 3, 4, 5]]],
+             [[1, 2, 3, 4, 5, 6], 1, 2, 3, [1, 2, 3, 4]]
+             )
+
+    for x in lists:
+        print(f'{longest_list(x)}   {x}')
+### A1 STOP ###
+
+
+### A2 START ###
+def foo(n):
+    """ A2 """
+    if n < 3:
+        return 0
+    elif n == 3:
+        return 1
+    else:
+        return 3*foo(n-1) - foo(n-2) - 2*foo(n-3) + foo(n-4)
+
+
+def foo(n):
+    """A2 Solution"""
+    pass
+
+
+def A2():
+    print('\nDemonstrating A2: The foo function')
+    for n in (10, 20, 25, 30, 50, 100):
+        print(f'foo({n}): {foo(n)}')
+### A2 STOP ###
+
+
+### B1 START ###
+def split(l):
+    '''B1: Split a list'''
+    pass
+
+
+def B1():
+    print('\nDemonstrating B1: The split function')
+    lists = ([],
+             [0],
+             [0, 1],
+             [0, 1, 2],
+             [0, 1, 2, 3],
+             [0, 1, 2, 3, 4]
+             )
+    for lst in lists:
+        print(f'{str(lst):15s} \t {split(lst)}')
+### B1 STOP ###
+
+
+if __name__ == "__main__":
+    A1()
+    A2()
+    B1()

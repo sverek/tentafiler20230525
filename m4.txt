@@ -1,0 +1,40 @@
+### A7 START ###
+def A7():
+    print('A7:')
+    print(toeplitz([6,-4,1,0,0]))
+
+def toeplitz(v):
+    pass
+### A7 STOP ###
+
+
+### A8 START ###
+from random import randint
+import concurrent.futures as future
+def A8():
+    print('A8:')
+    print_parallel_dice_statistics([1000]*9, range(2,11))
+
+def dice(n, n_side):
+    # do not modify
+    return [randint(1,n_side) for _ in range(n)]
+
+def print_parallel_dice_statistics(ns, n_sides):
+    pass
+### A8 STOP ###
+
+### B5 START ###
+import json
+def B5():
+    print('B5:')
+    print_info_parallel('customers.json', 2)
+
+def get_name(id):
+    # example of how to get 'name' of a customer 'id' from 'customers.json'
+    with open('customers.json') as f: data = json.load(f)
+    return data[id]['name']
+
+def print_info_parallel(database, processes):
+    pass
+        
+### B5 STOP ###

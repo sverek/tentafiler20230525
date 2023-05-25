@@ -1,0 +1,16 @@
+ 
+# A3: Assignment operator
+1 = x = y = z       # Expects 1.0  
+x + y + z = u       # Expects 3.0
+
+# A4: Logarithm function
+log(1)              # Expects 0.0
+log(5+5, 10)        # Expects 1.0
+log(16, 3-1)        # Expects 4.0
+log(log(100,10), 2) # Expects 1.0
+log(343, 7)         # Expects 3.0
+log(10, 10, 10)     # Expects EvaluationError
+log(0, 1)           # Expects EvaluationError
+log(3, 0)           # Expects EvaluationError
+
+### Use q och quit to exit the calculator!

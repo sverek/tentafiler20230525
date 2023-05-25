@@ -1,0 +1,139 @@
+class LinkedList:
+
+    class Node:
+        def __init__(self, data, succ=None):
+            self.data = data
+            self.succ = succ
+
+    def __init__(self, lst=[]):
+        self.first = None
+        for x in lst:
+            self.insert(x)
+
+    def __iter__(self):
+        current = self.first
+        while current:
+            yield current.data
+            current = current.succ
+
+    def __str__(self):
+        return '(' + ', '.join([str(x) for x in self]) + ')'
+
+    ### A5 START ###
+    def append(self, x):
+        '''Adds a new node at the end of the list'''
+        pass
+    # A5 STOP ### Demo function A5() after the classes
+
+
+
+class BST:
+
+    class Node:
+        def __init__(self, key, left=None, right=None):
+            self.key = key
+            self.left = left
+            self.right = right
+
+        def __str__(self):
+            return str((self.key, self.count))
+
+        def __iter__(self):
+            if self.left:
+                yield from self.left
+            yield self
+            if self.right:
+                yield from self.right
+
+    def __init__(self, init=None):
+        self.root = None
+        if init:
+            for x in init:
+                self.insert(x)
+
+    def __iter__(self):
+        if self.root:
+            yield from self.root
+
+    def __str__(self):
+        return '<' + ', '.join([str(x) for x in self]) + '>'
+
+    def insert(self, key):
+        def insert(key, r):
+            if r is None:
+                return BST.Node(key)
+            elif key < r.key:
+                r.left = insert(key, r.left)
+            elif key > r.key:
+                r.right = insert(key, r.right)
+            else:
+                pass
+            return r
+
+        self.root = insert(key, self.root)
+
+    ### A6 START ###
+    def number_on_level(self, level):
+        """Returns the number of nodes on level"""
+        pass
+    ### A6 STOP ### 
+
+    ### B3 START ###
+    def level_order_list(self):
+        """Returns a Python list with the keys from the tree in level order"""
+        pass
+    ### B3 STOP ###
+
+
+### B4 START ###
+# See exam text for task
+def f(lst:list)->list:
+    return [x.key for x in BST(lst)]      
+### B4 STOP ###
+
+
+### Demo functions ###
+
+def A5():
+    print(f'\nA5: Build a linked list with append')
+    llist = LinkedList()
+    for x in (1, 2, 3, 2, 1):
+        llist.append(x)
+        print(f'After append({x}): {llist}')
+
+
+def A6():
+    print(f'\nA6: Number of nodes on level in a binary tree')
+    inserts = (5, 8, 1, 3, 7, 2, 6, 9)
+    print(f'Inserted keys: {inserts}')
+    tree = BST(inserts)
+    print('Level   Number of nodes')
+    for level in (0, 1, 2, 3, 4):
+        result = tree.number_on_level(level)
+        if type(result) == int:
+            print(f'{level:3d} {result:10d}')
+        else:
+            print(f'{level:3d} {result}')
+
+
+def B3():
+    print(f'\nB3: Level_order_list')
+    inserts = (5, 8, 1, 3, 7, 2, 6, 9)
+    print(f'Inserted keys : {inserts}')
+    tree = BST(inserts)
+    print(f'Resulting list: {tree.level_order_list()}')
+
+
+def B4():
+    print(f'\nB4: Demonstration of the funktion f')  
+    print(f([3,1,2,4]))
+
+### Demo functions stop ###
+
+
+if __name__ == '__main__':
+    A5()
+    A6()
+    B3()
+    B4()
+    print() 
