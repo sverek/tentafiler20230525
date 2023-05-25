@@ -1,0 +1,5 @@
+In this file we put information about possible errors or clarifications.
+
+The exam guards will alert you if this file is updated, and that you should look in it.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
