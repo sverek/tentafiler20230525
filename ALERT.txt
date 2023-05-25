@@ -3,3 +3,6 @@ In this file we put information about possible errors or clarifications.
 The exam guards will alert you if this file is updated, and that you should look in it.
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Task B4:
+instead of "f(10**4) and f(10**8)"" it should be "f with a list of length 10**4 and 10**8 respectively as argument"
