@@ -6,3 +6,11 @@ The exam guards will alert you if this file is updated, and that you should look
 
 Task B4:
 instead of "f(10**4) and f(10**8)"" it should be "f with a list of length 10**4 and 10**8 respectively as argument"
+
+Task A5:
+Don't try to create LinkedList with insert - there is no insert method. Also you can not create LinkedList by giving a list argument. LinkedLists can only be build by the append method.
+
+Task A3:
+In the given code single assignment doesn't work. Add a wtok.next() in the assignment function after the lins variables[wtok.get_current()] = result.
+A classical error...
+
